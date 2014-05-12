@@ -25,7 +25,7 @@ def gradAscent(dataMatIn, classLabels):
     likelihood = .0
     m,n = shape(dataMatrix)
     alpha = 0.001
-    maxCycles = 5000
+    maxCycles = 500
     weights = ones((n,1))
     for k in range(maxCycles):              #heavy on matrix operations
         h = sigmoid(dataMatrix*weights)     #matrix mult
@@ -54,6 +54,11 @@ def gradAscent(dataMatIn, classLabels):
             #print (log(1+exp(dataVect)))
             #print ("---------------------------\n")
             #likelihood = (vect).transpose()*labelMat - log(1+exp(vect))
+            print ("\n------- DATAVECT ------- \n")
+            print (dataVect)
+            print ("\n------- labelVect ------- \n")
+            print (labelVect)
+            
             first = array([a*b for a,b in zip(dataVect, labelVect)])
             print ("\n------- FIRST ------- \n")
             print (first)
