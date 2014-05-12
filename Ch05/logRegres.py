@@ -18,7 +18,7 @@ def loadDataSet():
 def sigmoid(inX):
     return 1.0/(1+exp(-inX))
 
-def gradAscent(dataMatIn, classLabels, dataVect, labelVect):
+def gradAscent(dataMatIn, classLabels):
     f = open("MONFICHIER.txt", "w")
     dataMatrix = mat(dataMatIn)             #convert to NumPy matrix
     labelMat = mat(classLabels).transpose() #convert to NumPy matrix
@@ -35,28 +35,27 @@ def gradAscent(dataMatIn, classLabels, dataVect, labelVect):
 
         weights = weights + alpha * dataMatrix.transpose()* error #matrix mult
         if int(k % 25) == 0:
-            vect = dataMatrix*weights
-            dataVect = vect
+            dataVect = dataMatrix*weights
             labelVect = labelMat
             #print ("vect : \n")
             #print(vect)
             #scal = dot(vect.transpose(), vect)
             #print (scal)
             #print (labelMat)
-            print ("111111111111111111111111111111")
-            print('VECT\n')
-            print (vect.transpose())
-            print('labelMat\n')
-            print (labelMat.transpose())
-            print('VECT*labelMat\n')
-            inter = [a*b for a,b in zip(vect.transpose(),labelMat)]
-            print (array(inter))
-            print ("2222222222222222222222222222222\n")
-            print (log(1+exp(vect)))
-            print ("---------------------------\n")
-            likelihood = (vect).transpose()*labelMat - log(1+exp(vect))
-            f.write("\n my likelihood : ")
-            likelihood.tofile(f, sep=";", format="%s")
+            #print ("111111111111111111111111111111")
+            #print('VECT\n')
+            #print (dataVect.transpose())
+            #print('labelMat\n')
+            #print (labelMat.transpose())
+            #print('VECT*labelMat\n')
+            #inter = [a*b for a,b in zip(vect.transpose(),labelMat)]
+            #print (array(inter))
+            #print ("2222222222222222222222222222222\n")
+            #print (log(1+exp(vect)))
+            #print ("---------------------------\n")
+            #likelihood = (vect).transpose()*labelMat - log(1+exp(vect))
+            #f.write("\n my likelihood : ")
+            #likelihood.tofile(f, sep=";", format="%s")
             #print (likelihood)
             #f.write(value)
             f.write("\nerror;")
@@ -67,7 +66,7 @@ def gradAscent(dataMatIn, classLabels, dataVect, labelVect):
             weights.tofile(f,sep=";", format="%s")
 
 
-    return weights
+    return weights, dataVect, labelVect
 
 def plotBestFit(weights):
     import matplotlib.pyplot as plt
