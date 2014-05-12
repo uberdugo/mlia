@@ -25,7 +25,7 @@ def gradAscent(dataMatIn, classLabels):
     likelihood = .0
     m,n = shape(dataMatrix)
     alpha = 0.001
-    maxCycles = 500
+    maxCycles = 5000
     weights = ones((n,1))
     for k in range(maxCycles):              #heavy on matrix operations
         h = sigmoid(dataMatrix*weights)     #matrix mult
