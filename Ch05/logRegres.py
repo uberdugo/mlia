@@ -35,7 +35,8 @@ def gradAscent(dataMatIn, classLabels, dataVect, labelVect):
 
         weights = weights + alpha * dataMatrix.transpose()* error #matrix mult
         if int(k % 25) == 0:
-            dataVect = dataMatrix*weights
+            vect = dataMatrix*weights
+            dataVect = vect
             labelVect = labelMat
             #print ("vect : \n")
             #print(vect)
