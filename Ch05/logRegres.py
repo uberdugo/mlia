@@ -66,6 +66,8 @@ def gradAscent(dataMatIn, classLabels):
             print ("\n------- SECOND ------- \n")
             print (second)
             likelihood = mat(first.reshape(1,-1)) - second
+            print ("\n------- Log Likelihood ------- \n")
+            print (likelihood)
             likelihood2 = array(likelihood).reshape(1,-1)
             #print (sum(likelihood2))
             #print(likelihood)           
