@@ -18,7 +18,7 @@ def loadDataSet():
 def sigmoid(inX):
     return 1.0/(1+exp(-inX))
 
-def gradAscent(dataMatIn, classLabels):
+def gradAscent(dataMatIn, classLabels, dataVect, labelVect):
     f = open("MONFICHIER.txt", "w")
     dataMatrix = mat(dataMatIn)             #convert to NumPy matrix
     labelMat = mat(classLabels).transpose() #convert to NumPy matrix
@@ -35,7 +35,8 @@ def gradAscent(dataMatIn, classLabels):
 
         weights = weights + alpha * dataMatrix.transpose()* error #matrix mult
         if int(k % 25) == 0:
-            vect = dataMatrix*weights
+            dataVect = dataMatrix*weights
+            labelVect = labelMat
             #print ("vect : \n")
             #print(vect)
             #scal = dot(vect.transpose(), vect)
