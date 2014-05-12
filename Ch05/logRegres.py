@@ -54,7 +54,7 @@ def gradAscent(dataMatIn, classLabels):
             print (log(1+exp(dataVect)))
             print ("---------------------------\n")
             #likelihood = (vect).transpose()*labelMat - log(1+exp(vect))
-            likelihood = mat(array([a*b for a,b in zip(dataVect, labelVect)]).reshape(1,-1)) - log(1+exp(vect))
+            likelihood = mat(array([a*b for a,b in zip(dataVect, labelVect)]).reshape(1,-1)) - log(1+exp(dataVect))
             print(likelihood)           
             #f.write("\n my likelihood : ")
             #likelihood.tofile(f, sep=";", format="%s")
