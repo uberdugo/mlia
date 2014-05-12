@@ -53,7 +53,7 @@ def gradAscent(dataMatIn, classLabels):
             #print ("2222222222222222222222222222222\n")
             print (log(1+exp(dataVect)))
             print ("---------------------------\n")
-            likelihood = (vect).transpose()*labelMat - log(1+exp(vect))
+            #likelihood = (vect).transpose()*labelMat - log(1+exp(vect))
             likelihood = mat(np.array([a*b for a,b in zip(dataVect, labelVect)]).reshape(1,-1)) - log(1+exp(vect))
             print(likelihood)           
             #f.write("\n my likelihood : ")
