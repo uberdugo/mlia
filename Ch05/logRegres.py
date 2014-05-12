@@ -47,7 +47,7 @@ def gradAscent(dataMatIn, classLabels):
             print('labelMat\n')
             print (labelMat.transpose())
             print('VECT*labelMat\n')
-            inter = [a*b for a,b in zip(vect,labelMat)]
+            inter = [a*b for a,b in zip(vect.transpose(),labelMat)]
             print (array(inter))
             print ("2222222222222222222222222222222\n")
             print (log(1+exp(vect)))
