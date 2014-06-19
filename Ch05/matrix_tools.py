@@ -6,6 +6,9 @@ Logistic Regression Working Module
 from numpy import *
 import csv
 
+
+def centerMatrix(mat)
+
 def loadDataSet():
     dataMat = []; labelMat = []
     fr = open('testSet.txt')
