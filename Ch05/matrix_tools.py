@@ -8,6 +8,11 @@ import csv
 
 
 def centerMatrix(mat)
+    n,d = shape(mat)
+    vOnes = ones((n,1))
+    vMeans = mat.mean(0)
+    centeredMat = outer(vOnes,vMeans.transpose())
+    return centeredMat
 
 def loadDataSet():
     dataMat = []; labelMat = []
