@@ -7,7 +7,7 @@ from numpy import *
 import csv
 
 
-def centerMatrix(mat)
+def centerMatrix(mat):
     n,d = shape(mat)
     vOnes = ones((n,1))
     vMeans = mat.mean(0)
